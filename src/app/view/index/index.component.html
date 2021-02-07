@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="mainLeft">
+    <div class="zhishu">
+      <div class="zhishuList" [style]="zhuListPostion">
+        <div class="zhishuItem" *ngFor="let item of quoteList" [class]={fushu:item.quote.percent<0}>
+          <div class="zhishuItemLeft">
+            <h3>{{item.quote.name}}</h3>
+            <div>{{item.quote.current}}</div>
+            <p>{{item.quote.chg}}({{item.quote.percent}}%)</p>
+          </div>
+          <div class="svg">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 140px; height: 56px;">
+              <path class="StockSlider_last-close_3k-" d="M0 35 L140 35"></path>
+              <path class="StockSlider_polyline_YMO"
+                    d="M0 41 L0 38 L1 39 L1 40 L2 36 L2 32 L3 28 L4 31 L4 28 L5 30 L5 27 L6 26 L6 29 L7 27 L8 28 L8 28 L9 29 L9 29 L10 32 L10 34 L11 36 L12 33 L12 28 L13 26 L13 27 L14 29 L15 29 L15 29 L16 28 L16 29 L17 28 L17 29 L18 31 L19 32 L19 33 L20 32 L20 33 L21 33 L21 36 L22 37 L23 41 L23 37 L24 36 L24 35 L25 35 L26 34 L26 32 L27 31 L27 30 L28 31 L28 31 L29 28 L30 28 L30 28 L31 28 L31 28 L32 27 L32 28 L33 28 L34 29 L34 30 L35 26 L35 25 L36 24 L37 23 L37 23 L38 22 L38 22 L39 24 L39 24 L40 22 L41 21 L41 21 L42 22 L42 21 L43 21 L43 21 L44 20 L45 19 L45 17 L46 16 L46 16 L47 17 L48 17 L48 15 L49 13 L49 12 L50 10 L50 10 L51 8 L52 6 L52 7 L53 9 L53 9 L54 11 L54 10 L55 10 L56 12 L56 12 L57 12 L57 15 L58 14 L59 11 L59 12 L60 12 L60 11 L61 12 L61 13 L62 11 L63 11 L63 11 L64 9 L64 5 L65 6 L65 8 L66 8 L67 8 L67 9 L68 13 L68 13 L69 13 L70 14 L70 13 L71 12 L71 11 L72 11 L72 12 L73 12 L74 11 L74 10 L75 11 L75 11 L76 10 L76 12 L77 13 L78 14 L78 16 L79 19 L79 19 L80 20 L80 18 L81 16 L82 15 L82 16 L83 18 L83 17 L84 18 L85 18 L85 19 L86 18 L86 20 L87 25 L87 28 L88 27 L89 26 L89 27 L90 28 L90 29 L91 29 L91 27 L92 25 L93 24 L93 24 L94 23 L94 23 L95 23 L96 24 L96 23 L97 21 L97 20 L98 19 L98 19 L99 20 L100 19 L100 19 L101 19 L101 20 L102 21 L102 22 L103 23 L104 22 L104 21 L105 20 L105 21 L106 24 L107 26 L107 27 L108 27 L108 27 L109 29 L109 29 L110 29 L111 28 L111 27 L112 27 L112 28 L113 28 L113 28 L114 30 L115 30 L115 32 L116 35 L116 36 L117 38 L118 40 L118 41 L119 43 L119 41 L120 39 L120 37 L121 36 L122 35 L122 34 L123 33 L123 33 L124 33 L124 33 L125 30 L126 29 L126 28 L127 28 L127 28 L128 29 L129 30 L129 31 L130 30 L130 28 L131 27 L131 26 L132 27 L133 26 L133 25 L134 24 L134 23 L135 22 L135 21 L136 21 L137 20 L137 20 L138 20 L138 20 L139 19"></path>
+              0
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="circleList">
+        <div class="circle" (click)="toggleZhushu(0)"></div>
+        <div class="circle" (click)="toggleZhushu(1)"></div>
+        <div class="circle" (click)="toggleZhushu(2)"></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="mainRight"></div>
+</div>

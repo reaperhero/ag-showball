@@ -1,0 +1,71 @@
+.main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.zhishuItem {
+  display: flex;
+  align-items: center;
+  width: 213.33px;
+
+  .zhishuItemLeft h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0px;
+    width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .zhishuItemLeft > div {
+    font-size: 18px;
+    font-weight: 900;
+    color: orangered;
+  }
+
+  .zhishuItemLeft > p {
+    font-size: 12px;
+    font-weight: 600;
+    color: orangered;
+    margin: 0;
+  }
+
+  .svg svg {
+    width: 140px;
+    height: 56px;
+    transform: scale(.5);
+  }
+
+}
+
+.zhishuItem.fushu {
+  .zhushuItemLeft > div, .zhushuItemLeft > p {
+    color: #093 !important;
+  }
+}
+
+.zhishu {
+  width: 640px;
+  overflow: hidden;
+  height: 100px;
+
+  .circleList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .circle {
+      width: 4px;
+      height: 4px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      margin: 0 5px;
+    }
+  }
+}
+
+.zhishuList {
+  width: 1920px;
+  display: flex;
+}
