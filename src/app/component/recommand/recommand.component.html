@@ -1,0 +1,16 @@
+<div class="newslist">
+  <div *ngFor="let item of newsList" class="newsItem">
+    <p [innerHtml]="item.original_status.description"></p>
+    <div>
+      <img [src]="(getImgUrl(item.original_status.user.photo_domain,item.original_status.user.profile_image_url))">
+      <span class="username">
+          {{item.original_status.user.screen_name}}
+      </span>
+
+      <span>
+          {{item.original_status.created_at|totime|date:'yyyy-mm-dd HH:MM'}}
+      </span>
+    </div>
+  </div>
+</div>
+
