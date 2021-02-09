@@ -12,7 +12,7 @@ export class ChooseComponent implements OnInit {
   areas = {};
   tools = {};
   tabList = [];
-  toolsObj = { '基本指标' : []};
+  toolsObj = { '基本指标': []};
   currentTab = '基本指标';
   sxList = [];
   exchange = 'sh_sz';
@@ -29,22 +29,20 @@ export class ChooseComponent implements OnInit {
     this.getTools();
   }
 
-  //获取行业
+  // 获取行业
   async getHy() {
-    let result = await this.newSer.getIndustries();
-    //console.log(result.data.industries)
+    const result = await this.newSer.getIndustries();
     this.industriesList = result.data.industries;
   }
 
   async getArea() {
-    let resultArea = await this.newSer.getAreas();
-    //console.log(resultArea.data.areas)
+    const resultArea = await this.newSer.getAreas();
     this.areaList = Object.keys(resultArea.data.areas);
     this.areas = resultArea.data.areas;
   }
 
   async getTools() {
-    let resultTools = await this.newSer.getTools();
+    const resultTools = await this.newSer.getTools();
     this.toolsObj = resultTools;
     console.log(resultTools);
     this.tabList = Object.keys(resultTools);
@@ -54,7 +52,7 @@ export class ChooseComponent implements OnInit {
   }
 
   async getStocks() {
-    let resultStocks = this.newSer.getcstock({
+    const resultStocks = this.newSer.getcstock({
       order_by: 'follow',
       page: 1,
       order: 'desc'
@@ -80,12 +78,12 @@ export class ChooseComponent implements OnInit {
       return;
     }
 
-    if (item.adj != 0) {
+    if (item.adj !== 0) {
       item.field = item.field + '.20191231';
     }
 
 
-    let result = await this.newSer.getFieldRange(item.field);
+    const result = await this.newSer.getFieldRange(item.field);
     console.log(result.data);
     item.min = result.data.min;
     item.max = result.data.max;
@@ -95,7 +93,7 @@ export class ChooseComponent implements OnInit {
   }
 
   async getSg() {
-    let options = {
+    const options = {
       category: 'CN',
       exchange: this.exchange,
       areacode: this.areacode,
@@ -121,7 +119,7 @@ export class ChooseComponent implements OnInit {
 
     });
 
-    let result = await this.newSer.getSxStocks(options);
+    const result = await this.newSer.getSxStocks(options);
     this.sxStockList = result.data.list;
     console.log(this.sxStockList);
   }
