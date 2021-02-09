@@ -9,9 +9,9 @@
     <div class="chooseRange">
 
       <div class="rangeItem">
-                <span>
-                    市场：
-                </span>
+        <span>
+            市场：
+        </span>
         <select name="rangeMarket1" [(ngModel)]="exchange">
           <option value="sh_sz">全部A股</option>
           <option value="sha">沪市A股</option>
@@ -20,9 +20,9 @@
       </div>
 
       <div class="rangeItem" >
-                <span>
-                    行业：
-                </span>
+        <span>
+            行业：
+        </span>
         <select name="rangeMarket2" [(ngModel)]="indcode">
           <option value="">全部</option>
           <option *ngFor="let item of industriesList" value="{{item.encode}}">{{item.name}}</option>
