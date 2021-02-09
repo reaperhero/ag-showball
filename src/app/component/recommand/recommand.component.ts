@@ -16,23 +16,9 @@ export class RecommandComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      switch (params.key) {
-        case 'dayinfo':
-          this.newsSer.getNews('dayinfo').then((res) => {
-
-            res.list.forEach((item, index) => {
-              item.data = JSON.parse(item.data);
-            });
-            console.log(res);
-            this.newsList = res.list;
-          });
-          break;
-        default:
-          this.newsSer.getNews('recommand').then((res) => {
-            console.log(res);
-            this.newsList = res.items;
-          });
-      }
+      this.newsSer.getNews('recommand').then((res) => {
+        this.newsList = res.items;
+      });
     });
   }
 
@@ -40,5 +26,4 @@ export class RecommandComponent implements OnInit {
     const imageList = list.split(',');
     return 'https:' + domain + imageList[0];
   }
-
 }

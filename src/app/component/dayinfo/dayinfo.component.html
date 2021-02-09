@@ -1,1 +1,22 @@
-<p>dayinfo works!</p>
+<div class="dayInfo">
+  <div class="time">
+    <span class="month">{{currentTime|date:'MM'}}月</span>
+    <span class="day">{{currentTime|date:'dd'}}日</span>
+
+  </div>
+
+  <div class="infoList">
+    <div class="infoItem" *ngFor="let item of newsList">
+      <div class="infoLeft">
+        <div class="infotime">
+          {{item.created_at|totime|date:'HH:MM'}}
+        </div>
+      </div>
+      <div class="infoRight">
+        <p class="info">
+          {{item.text}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

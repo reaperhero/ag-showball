@@ -13,20 +13,16 @@ const routes: Routes = [
     component: IndexComponent,
     children: [
       {
+        path: 'recommand',
+        component: RecommandComponent
+      },
+      {
         path: '',
         component: RecommandComponent
       },
       {
         path: 'dayinfo',
         component: DayinfoComponent
-      },
-      {
-        path: 'shenhu',
-        component: RecommandComponent
-      },
-      {
-        path: 'kechuang',
-        component: RecommandComponent
       }
     ]
   },
